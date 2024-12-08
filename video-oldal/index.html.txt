@@ -1,0 +1,28 @@
+!DOCTYPE html
+html lang=hu
+head
+  meta charset=UTF-8
+  meta name=viewport content=width=device-width, initial-scale=1.0
+  titleTeljes képernyős videótitle
+head
+body style=margin 0; padding 0; overflow hidden;
+  !-- Videó elem --
+  video id=myVideo autoplay muted loop style=width 100%; height 100%; object-fit cover;video
+
+  script
+    const video = document.getElementById('myVideo');
+
+     Videó betöltése
+    video.src = 'video.mp4';  Videófájl elérési útja
+
+    video.play().catch((error) = {
+      console.error('A videó nem indult el', error);
+    });
+
+     Teljes képernyő mód
+    document.documentElement.requestFullscreen().catch((error) = {
+      console.error('Nem sikerült teljes képernyőre váltani', error);
+    });
+  script
+body
+html
